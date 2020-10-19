@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Data
 @Entity
@@ -18,6 +17,7 @@ public class Roles {
     @Column(name = "role_id")
     private int role_id;
 
-    @Column(name="role_name")
-    private String role_name;
+    @Column(name="role")
+    private String role;
+
 }
