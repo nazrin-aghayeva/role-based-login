@@ -39,7 +39,6 @@ public class UserController {
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public ModelAndView registration(){
         ModelAndView modelAndView= new ModelAndView();
-        Users user= new Users();
         modelAndView.addObject("registration");
         return modelAndView;
     }
