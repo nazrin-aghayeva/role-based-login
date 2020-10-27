@@ -32,10 +32,24 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login(){
         ModelAndView model= new ModelAndView();
-        Users user= new Users();
         model.addObject("login");
         return model;
     }
+
+    @RequestMapping(value = "/user_page", method = RequestMethod.GET)
+    public ModelAndView userPage(){
+        ModelAndView model= new ModelAndView();
+        model.addObject("user_page");
+        return model;
+    }
+
+    @RequestMapping(value = "/admin_page", method = RequestMethod.GET)
+    public ModelAndView adminPage(){
+        ModelAndView model= new ModelAndView();
+        model.addObject("admin_page");
+        return model;
+    }
+
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public ModelAndView registration(){
         ModelAndView modelAndView= new ModelAndView();

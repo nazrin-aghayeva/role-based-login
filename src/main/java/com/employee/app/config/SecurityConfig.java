@@ -11,11 +11,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity https) throws Exception{
-        https.authorizeRequests().antMatchers("/registration", "/h2-console/**")
-                .permitAll().anyRequest().authenticated();
+        https.authorizeRequests().
+                antMatchers("/registration", "/h2-console/**").permitAll().
+                antMatchers("/admin_page").hasRole("ADMIN").
+                antMatchers("/user_page").hasRole("USER").
+                anyRequest().authenticated();
 
         https.formLogin().
                 loginPage("/login").
+                defaultSuccessUrl("/user_page").
                 failureForwardUrl("/error").permitAll();
 
         https

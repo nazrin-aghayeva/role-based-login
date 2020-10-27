@@ -5,11 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "roles_table")
 public class Roles {
     @Id
@@ -17,7 +18,6 @@ public class Roles {
     @Column(name = "role_id")
     private int role_id;
 
-    @Column(name="role")
+    @Column(name="roles")
     private String role;
-
 }
