@@ -29,7 +29,7 @@ public class Users {
     @Column(name = "confirm_password")
     private String confirm_password;
 
-    @ManyToMany(cascade=CascadeType.ALL, fetch =FetchType.EAGER)
+    @ManyToMany(cascade=CascadeType.MERGE, fetch =FetchType.EAGER)
     @JoinTable(name = "user_roles",
             joinColumns = {@JoinColumn(name = "u_id", referencedColumnName ="user_id" )},
             inverseJoinColumns = {@JoinColumn(name = "r_id", referencedColumnName = "role_id")}

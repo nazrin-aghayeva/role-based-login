@@ -20,4 +20,7 @@ public class Roles {
 
     @Column(name="roles")
     private String role;
+
+    @ManyToMany(mappedBy = "roles")
+    public Set<Users> users;
 }
