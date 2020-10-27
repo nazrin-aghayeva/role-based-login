@@ -29,6 +29,9 @@ public class Users {
     @Column(name = "confirm_password")
     private String confirm_password;
 
+    @Column(name = "active")
+    private int active;
+
     @ManyToMany(cascade=CascadeType.MERGE, fetch =FetchType.EAGER)
     @JoinTable(name = "user_roles",
             joinColumns = {@JoinColumn(name = "u_id", referencedColumnName ="user_id" )},
