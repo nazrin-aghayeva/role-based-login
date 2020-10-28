@@ -3,6 +3,7 @@ package com.employee.app.entities;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 
@@ -32,6 +33,10 @@ public class Users {
 
     @Column(name = "active")
     private int active;
+
+    @Column(name = "created_time")
+    private LocalDateTime created_time;
+
 
     @JsonManagedReference
     @ManyToMany(cascade=CascadeType.MERGE, fetch =FetchType.EAGER)

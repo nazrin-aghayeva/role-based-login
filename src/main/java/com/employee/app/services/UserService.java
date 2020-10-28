@@ -8,6 +8,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Optional;
@@ -36,6 +37,7 @@ public class UserService {
         user.setConfirm_password(bCryptPasswordEncoder.encode(user.getConfirm_password()));
         Roles userRole= roleRepo.findByRole("USER");
         user.setActive(1);
+        user.setCreated_time(LocalDateTime.now());
         user.setRoles(new HashSet<Roles>(Arrays.asList(userRole)));
         return userRepo.save(user);
     }
