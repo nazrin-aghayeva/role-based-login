@@ -1,0 +1,34 @@
+server:
+  port: 5060
+
+spring:
+
+  datasource:
+    url: dbc:postgresql://localhost:5432/login
+    username: postgres
+    password: secret
+
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration
+
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: nazrin.agha12@gmail.com
+    password: Starter20*
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
