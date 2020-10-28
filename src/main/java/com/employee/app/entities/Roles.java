@@ -1,16 +1,17 @@
 package com.employee.app.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
 
-@Data
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Table(name = "roles_table")
 public class Roles {
     @Id
@@ -21,6 +22,7 @@ public class Roles {
     @Column(name="roles")
     private String role;
 
+    @JsonBackReference
     @ManyToMany(mappedBy = "roles")
     public Set<Users> users;
 }

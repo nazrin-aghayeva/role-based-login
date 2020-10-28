@@ -1,10 +1,11 @@
 package com.employee.app.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import javax.persistence.*;
 import java.util.Set;
 
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -32,6 +33,7 @@ public class Users {
     @Column(name = "active")
     private int active;
 
+    @JsonManagedReference
     @ManyToMany(cascade=CascadeType.MERGE, fetch =FetchType.EAGER)
     @JoinTable(name = "user_roles",
             joinColumns = {@JoinColumn(name = "u_id", referencedColumnName ="user_id" )},

@@ -22,17 +22,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public DataSource dataSource;
 
-    @Value("${spring.queries.users-query}")
-    private String usersQuery;
-    @Value("${spring.queries.roles-query}")
-    private String rolesQuery;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
         auth.
                jdbcAuthentication().
-                authoritiesByUsernameQuery(usersQuery).
-                authoritiesByUsernameQuery(rolesQuery).
+                authoritiesByUsernameQuery("select role_id, role from roles_table WHERE role=?").
+                usersByUsernameQuery("select email, password, active from user_table WHERE email=?").
                 dataSource(dataSource).
                 passwordEncoder(bCryptPasswordEncoder);
     }
