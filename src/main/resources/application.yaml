@@ -4,7 +4,7 @@ server:
 spring:
 
   datasource:
-    url: dbc:postgresql://localhost:5432/login
+    url: jdbc:postgresql://localhost:5432/login
     username: postgres
     password: secret
 
@@ -22,11 +22,16 @@ spring:
     default-encoding: UTF-8
     host: smtp.gmail.com
     username: nazrin.agha12@gmail.com
-    password: Starter20*
+#    for using on Windows computer
+    password: zswykrdnvcejaise
+#    for using on Mac
+#    password: fekdpxaloykbxvcp
     port: 587
     properties:
       mail:
         smtp:
+          ssl:
+            trust: smtp.gmail.com
           auth: true
           starttls:
             enable: true

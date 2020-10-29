@@ -37,6 +37,8 @@ public class Users {
     @Column(name = "created_time")
     private LocalDateTime created_time;
 
+    private boolean enabled;
+
 
     @JsonManagedReference
     @ManyToMany(cascade=CascadeType.MERGE, fetch =FetchType.EAGER)
