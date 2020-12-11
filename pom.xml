@@ -8,7 +8,7 @@
 
 
     <groupId>org.feed.news</groupId>
-    <artifactId>news-feed-project</artifactId>
+    <artifactId>rolebased-login</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <parent>

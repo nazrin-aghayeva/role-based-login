@@ -117,7 +117,7 @@ public class UserController {
         else
         {
             model.addObject("message", "Invalid Link");
-            model.setViewName("error");
+            model.setViewName("error-page");
         }
         return model;
     }
