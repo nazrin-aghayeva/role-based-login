@@ -19,9 +19,12 @@ public class Roles {
     @Column(name = "role_id")
     private int role_id;
 
-    @Enumerated(EnumType.STRING)
+    public Roles(String role_name) {
+        this.role= role_name;
+    }
+
     @Column(name="roles")
-    private ERole role;
+    private String role;
 
     @JsonBackReference
     @ManyToMany(mappedBy = "roles")
