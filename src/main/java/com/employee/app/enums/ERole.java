@@ -1,4 +1,4 @@
-package com.employee.app.entities;
+package com.employee.app.enums;
 
 public enum ERole {
     ADMIN,

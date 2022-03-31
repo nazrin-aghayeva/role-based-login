@@ -1,6 +1,6 @@
 package com.employee.app.services;
 
-import com.employee.app.entities.Mail;
+import com.employee.app.model.Mail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;

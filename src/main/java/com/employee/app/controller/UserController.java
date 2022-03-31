@@ -2,7 +2,7 @@ package com.employee.app.controller;
 
 
 import com.employee.app.entities.ConfirmationToken;
-import com.employee.app.entities.Mail;
+import com.employee.app.model.Mail;
 import com.employee.app.entities.Users;
 import com.employee.app.repos.ConfirmationTokenRepo;
 import com.employee.app.repos.UserRepo;

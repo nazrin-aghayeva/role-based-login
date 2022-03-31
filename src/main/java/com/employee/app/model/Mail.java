@@ -1,4 +1,4 @@
-package com.employee.app.entities;
+package com.employee.app.model;
 
 import lombok.*;
 

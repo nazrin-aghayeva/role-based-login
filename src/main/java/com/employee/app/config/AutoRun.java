@@ -21,11 +21,9 @@ public class AutoRun {
 //    @Bean
     public CommandLineRunner addRoles(){
         log.info("Roles are added");
-        return args -> {
-            roleRepo.saveAll(Arrays.asList(
-                    new Roles("USER"),
-                    new Roles("ADMIN")
-            ));
-        };
+        return args -> roleRepo.saveAll(Arrays.asList(
+                new Roles("USER"),
+                new Roles("ADMIN")
+        ));
     }
 }
